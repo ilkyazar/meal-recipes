@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 import HeaderFavoritesButton from './HeaderFavoritesButton';
 import mealsImage from '../../assets/meals.jpg';
@@ -8,7 +9,9 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>Recipes</h1>
+        <Link to={'/'} className={classes.mainTitle}>
+          <h1>Recipes</h1>
+        </Link>
         <HeaderFavoritesButton onClick={props.onShowCart} />
       </header>
       <div className={classes['main-image']}>

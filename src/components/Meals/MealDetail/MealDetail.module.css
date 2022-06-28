@@ -1,0 +1,58 @@
+.mealSection {
+  width: 60%;
+  margin: 2rem auto;
+  animation: meal-appear 1s ease-out forwards;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mealImg {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  max-width: 100%;
+}
+
+.mealLoading {
+  text-align: center;
+  color: white;
+}
+
+.MealError {
+  text-align: center;
+  color: red;
+}
+
+.button {
+  width: 250px;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #f1da44;
+  color: rgb(33, 30, 30);
+  padding: 0.75rem 3rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #ac9c2f;
+}
+
+@keyframes meal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

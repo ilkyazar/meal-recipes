@@ -1,5 +1,6 @@
 import Card from '../../UI/Card';
 import { useStore } from '../../../hooks-store/store';
+import { Link } from 'react-router-dom';
 import classes from './MealItem.module.css';
 
 const MealItem = (props) => {
@@ -19,7 +20,9 @@ const MealItem = (props) => {
           alt={props.name}
         />
         <h3 className={classes.mealTitle}>{props.name}</h3>
-        <button className={classes.button}>Go To Recipe</button>
+        <Link to={`/meals/${props.id}`}>
+          <button className={classes.button}>Go To Recipe</button>
+        </Link>
         <button className={classes.button} onClick={toggleFavHandler}>
           {!props.isFav ? 'Add To Favorites' : 'Unfavorite'}
         </button>
