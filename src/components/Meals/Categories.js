@@ -1,19 +1,26 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import classes from './Categories.module.css';
+import CategoryContext from '../../store/category-context';
 
 const Categories = () => {
   const [category, setCategory] = useState();
+  const categoryCtx = useContext(CategoryContext);
 
   const categorySelectHandler = (event) => {
     setCategory(event.target.value);
   };
 
+  const categorySearchHandler = () => {
+    console.log(category);
+    categoryCtx.updateCategory(category);
+  };
+
   return (
     <div className={classes.categories}>
       <select
+        onChange={categorySelectHandler}
         className={classes.choose}
         value={category}
-        onChange={categorySelectHandler}
       >
         <option value="Breakfast">Breakfast</option>
         <option value="Dessert">Dessert</option>
@@ -22,7 +29,12 @@ const Categories = () => {
         <option value="Vegetarian">Vegetarian</option>
       </select>
 
-      <button className={classes.button}>Search</button>
+      <button
+        onClick={categorySearchHandler}
+        className={classes.button}
+      >
+        Search
+      </button>
     </div>
   );
 };
