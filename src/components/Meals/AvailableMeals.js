@@ -2,8 +2,10 @@ import { useEffect, useState, useContext } from 'react';
 import classes from './AvailableMeals.module.css';
 import CategoryContext from '../../store/category-context';
 import MealItem from './MealItem/MealItem';
-
+import { useStore } from '../../hooks-store/store';
 const AvailableMeals = () => {
+  const state = useStore()[0];
+
   const categoryCtx = useContext(CategoryContext);
   const category = categoryCtx.selectedCategory;
 
@@ -52,19 +54,6 @@ const AvailableMeals = () => {
     );
   }
 
-  let mealsList = null;
-
-  if (meals !== null) {
-    mealsList = meals.map((meal) => (
-      <MealItem
-        id={meal.idMeal}
-        key={meal.idMeal}
-        name={meal.strMeal}
-        imgUrl={meal.strMealThumb}
-      />
-    ));
-  }
-
   let content;
 
   if (meals != null) {
@@ -74,6 +63,7 @@ const AvailableMeals = () => {
         key={meal.idMeal}
         name={meal.strMeal}
         imgUrl={meal.strMealThumb}
+        isFav={state.favMealIds.includes(meal.idMeal) ? true : false}
       />
     ));
     content = <ul>{mealsList}</ul>;
