@@ -1,0 +1,27 @@
+.categories {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.choose {
+  flex-basis: 65%;
+  margin-right: 40px;
+  font-size: larger;
+}
+
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #f1da44;
+  color: rgb(33, 30, 30);
+  padding: 0.75rem 3rem;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #ac9c2f;
+}

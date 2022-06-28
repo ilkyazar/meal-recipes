@@ -1,0 +1,51 @@
+.meal {
+  flex-basis: 30%;
+  margin: 1rem;
+  padding-bottom: 1rem;
+}
+
+.mealTitle {
+  text-align: center;
+}
+
+.mealImg {
+  width: 90%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.mealContent {
+  position: relative;
+}
+
+.button {
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #193623;
+  color: white;
+  padding: 0.75rem 3rem;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #1a8a41;
+}
+
+.floatingButton {
+  position: absolute;
+  top: -30px;
+  right: 15px;
+  border-radius: 100%;
+  transform: scale(0.3);
+  transform-origin: 50% 50%;
+  box-shadow: 0 0 250px rgba(0, 0, 0, 0.4);
+  background: #212121;
+  cursor: pointer;
+}
