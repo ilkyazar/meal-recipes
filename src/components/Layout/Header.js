@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import HeaderFavoritesButton from './HeaderFavoritesButton';
+import HeaderButton from './HeaderButton';
 import mealsImage from '../../assets/meals.jpg';
 import classes from './Header.module.css';
 
@@ -12,7 +12,7 @@ const Header = (props) => {
         <Link to={'/'} className={classes.mainTitle}>
           <h1>Recipes</h1>
         </Link>
-        <HeaderFavoritesButton onClick={props.onShowCart} />
+        <HeaderButton onClick={props.onShowCart} />
       </header>
       <div className={classes['main-image']}>
         <img

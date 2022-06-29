@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 3%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
@@ -17,6 +17,7 @@
 .mainTitle {
   color: white;
   text-decoration: none;
+  flex-basis: 60%;
 }
 
 .main-image {

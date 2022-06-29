@@ -1,3 +1,48 @@
+# Meal Recipes App
+
+### `Developed with React, TheMealDB API & Firebase Auth REST API`
+
+## API Integration:
+
+- Meal recipes are fetched from TheMealDB API.
+- User can view meals list by selecting different meal categories from the dropdown.
+- Meal names and images are displayed in a card component.
+
+## Authentication:
+
+- Used Firebase Auth REST API for authentication.
+- User can sign up and login via e-mail.
+- User can logout.
+- User is not able to see the recipes list or recipe details if they are not logged in.
+- Only after logging in, user can see the Logout and Favorites Count button.
+
+## Custom Hooks:
+
+- User can favorite/unfavorite recipes.
+- Custom store hook is implemented for this purpose, since this is a high-frequency feature and Context API would force unnecessary re-renders in this case.
+- Badge on the right left corner is updated according to the new favorited meals count.
+
+## Routing:
+
+- For routing, react-router-dom v6.3.0 is used.
+- Recipe detail page is under /meals:id.
+- User can view the detail recipe page of a meal, see the instructions, title, tags, category, area etc. and favorite/unfavorite meal in the detail page.
+- Home page redirects to meals path only if user is logged in, otherwise auth page is displayed.
+- Pages are protected if user is not logged in.
+
+## React Context API:
+
+- Context API is used to dispatch category action in Categories component and to fetch data according to the selected category in AvailableMeals component.
+- Also used Context API for auth-context.
+
+![Meals](src/assets/app_imgs/meals.png)
+
+![Meal Details](src/assets/app_imgs/meal_details.png)
+
+![Login](src/assets/app_imgs/auth_login.png)
+
+![Signup](src/assets/app_imgs/auth_signup.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

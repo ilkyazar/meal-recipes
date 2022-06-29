@@ -4,7 +4,7 @@
   border: none;
   background-color: #34864f;
   color: white;
-  padding: 0.75rem 3rem;
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,6 +15,23 @@
 .button:hover,
 .button:active {
   background-color: #3d985a;
+}
+
+.logoutButton {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #051209;
+  color: white;
+  padding: 0.75rem 3rem;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+.logoutButton:hover,
+.logoutButton:active {
+  background-color: #0e3219;
 }
 
 .icon {
