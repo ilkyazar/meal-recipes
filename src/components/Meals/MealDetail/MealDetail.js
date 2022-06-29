@@ -14,8 +14,7 @@ const MealDetail = () => {
   const [state, dispatch] = useStore();
 
   const toggleFavHandler = () => {
-    console.log('Toggle fav for: ', mealId);
-    dispatch('TOGGLE_FAV', mealId);
+    dispatch('TOGGLE_FAV', { id: mealId, name: meal.strMeal });
   };
 
   useEffect(() => {
@@ -30,7 +29,6 @@ const MealDetail = () => {
 
       const responseData = await res.json();
 
-      console.log(responseData.meals[0]);
       setMeal(responseData.meals[0]);
       setIsLoading(false);
     };
@@ -71,7 +69,7 @@ const MealDetail = () => {
             onClick={toggleFavHandler}
             className={classes.button}
           >
-            {state.favMealIds.includes(mealId)
+            {state.favMeals.some((m) => m.id === mealId)
               ? 'Unfavorite'
               : 'Add To Favorites'}
           </button>

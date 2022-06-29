@@ -11,7 +11,6 @@ const Categories = () => {
   };
 
   const categorySearchHandler = () => {
-    console.log(category);
     categoryCtx.updateCategory(category);
   };
 

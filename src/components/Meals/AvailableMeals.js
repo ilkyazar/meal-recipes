@@ -26,8 +26,6 @@ const AvailableMeals = () => {
 
       const responseData = await res.json();
 
-      console.log(responseData.meals);
-
       setMeals(responseData.meals);
       setIsLoading(false);
     };
@@ -63,7 +61,11 @@ const AvailableMeals = () => {
         key={meal.idMeal}
         name={meal.strMeal}
         imgUrl={meal.strMealThumb}
-        isFav={state.favMealIds.includes(meal.idMeal) ? true : false}
+        isFav={
+          state.favMeals.some((m) => m.id === meal.idMeal)
+            ? true
+            : false
+        }
       />
     ));
     content = <ul>{mealsList}</ul>;

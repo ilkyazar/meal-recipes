@@ -12,7 +12,7 @@ const Header = (props) => {
         <Link to={'/'} className={classes.mainTitle}>
           <h1>Recipes</h1>
         </Link>
-        <HeaderButton onClick={props.onShowCart} />
+        <HeaderButton onClick={props.onShowModal} />
       </header>
       <div className={classes['main-image']}>
         <img

@@ -1,0 +1,35 @@
+.item {
+  display: inline-block;
+  position: relative;
+  margin-top: 25px;
+}
+
+.item:after {
+  position: absolute;
+  content: '';
+  border-bottom: 1px solid #cccccc;
+  transform: translateX(-50%);
+  width: 100%;
+  bottom: -15px;
+  left: 50%;
+}
+
+.title {
+  font: inherit;
+}
+
+.button {
+  float: right;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #c85213;
+  color: white;
+  padding: 0.75rem 3rem;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #f38144;
+}

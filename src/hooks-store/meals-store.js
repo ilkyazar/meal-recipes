@@ -1,31 +1,29 @@
 import { initStore } from './store';
 
 const configureStore = () => {
-  console.log('Meals store is configuring');
   const actions = {
-    TOGGLE_FAV: (curState, mealId) => {
-      const updatedFavMeals = [...curState.favMealIds];
-      let favoritedMealCount = curState.favCount;
+    TOGGLE_FAV: (curState, meal) => {
+      const updatedFavMeals = [...curState.favMeals];
 
-      if (updatedFavMeals.includes(mealId)) {
-        const mealIndex = updatedFavMeals.indexOf(mealId);
+      if (updatedFavMeals.some((m) => m.id === meal.id)) {
+        const mealIndex = updatedFavMeals.findIndex(
+          (m) => m.id === meal.id
+        );
         updatedFavMeals.splice(mealIndex, 1);
-        favoritedMealCount -= 1;
       } else {
-        updatedFavMeals.push(mealId);
-        favoritedMealCount += 1;
+        updatedFavMeals.push({ id: meal.id, name: meal.name });
       }
 
-      console.log('Favorites: ', updatedFavMeals);
-      console.log('Favorited meal count: ', favoritedMealCount);
       return {
-        favMealIds: updatedFavMeals,
-        favCount: favoritedMealCount,
+        favMeals: updatedFavMeals,
+        favCount: updatedFavMeals.length,
       };
     },
   };
-  initStore(actions, { favMealIds: [], favCount: 0 });
-  console.log('Store initialized');
+  initStore(actions, {
+    favMeals: [],
+    favCount: 0,
+  });
 };
 
 export default configureStore;

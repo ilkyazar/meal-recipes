@@ -21,6 +21,7 @@
 - User can favorite/unfavorite recipes.
 - Custom store hook is implemented for this purpose, since this is a high-frequency feature and Context API would force unnecessary re-renders in this case.
 - Badge on the right left corner is updated according to the new favorited meals count.
+- Also, favorited meals can be seen on a modal after clicking Your Favorites, detail page of the meal can be viewed with Cook button.
 
 ## Routing:
 
@@ -38,6 +39,8 @@
 ![Meals](src/assets/app_imgs/meals.png)
 
 ![Meal Details](src/assets/app_imgs/meal_details.png)
+
+![Favorite Meals](src/assets/app_imgs/favorite_meals.png)
 
 ![Login](src/assets/app_imgs/auth_login.png)
 

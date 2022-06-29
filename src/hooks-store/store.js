@@ -30,7 +30,6 @@ export const useStore = () => {
 
 export const initStore = (userActions, initialState) => {
   if (initialState) {
-    console.log('Initial State: ', initialState);
     globalState = { ...globalState, ...initialState };
   }
   actions = { ...actions, ...userActions };

@@ -7,8 +7,7 @@ const MealItem = (props) => {
   const dispatch = useStore()[1];
 
   const toggleFavHandler = () => {
-    console.log('Toggle fav for: ', props.id);
-    dispatch('TOGGLE_FAV', props.id);
+    dispatch('TOGGLE_FAV', { id: props.id, name: props.name });
   };
 
   return (
